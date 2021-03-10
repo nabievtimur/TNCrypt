@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Исходные файлы">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Файлы заголовков">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Файлы ресурсов">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Файлы заголовков\cipher">
+      <UniqueIdentifier>{baae0fe2-723a-43ea-b116-68501dec2b98}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\cipher">
+      <UniqueIdentifier>{c1d5c7af-dd92-48c2-9cb7-a7955e0ff1ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\cipher\Magma">
+      <UniqueIdentifier>{68479b84-2147-433b-af51-c4125ebcb57b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\include\TNCrypt.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\TNStatus.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\cipher\TNCipher.h">
+      <Filter>Файлы заголовков\cipher</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\cipher\TNMagma.h">
+      <Filter>Файлы заголовков\cipher\Magma</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\h\cipher\TNpMagma.h">
+      <Filter>Файлы заголовков\cipher\Magma</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\src\cpp\TNMagma.c">
+      <Filter>Исходные файлы\cipher</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
