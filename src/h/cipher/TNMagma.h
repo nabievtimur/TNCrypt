@@ -1,8 +1,7 @@
-#ifndef TNPMAGMA_H
-#define TNPMAGMA_H
+#ifndef TNMAGMA_H
+#define TNMAGMA_H
 
-#include <stdint.h>
-#include "..\..\include\TNStatus.h"
+#include "../../../include/TNCrypt.h"
 
 const uint8_t s_box[8][16] = {
 	{ 0x0c, 0x04, 0x06, 0x02, 0x0a, 0x05, 0x0b, 0x09,
@@ -22,4 +21,22 @@ const uint8_t s_box[8][16] = {
 	{ 0x01, 0x07, 0x0e, 0x0d, 0x00, 0x05, 0x08, 0x03,
 	  0x04, 0x0f, 0x0a, 0x06, 0x09, 0x0c, 0x0b, 0x02 } };
 
-#endif //!TNPMAGMA_H
+/** @brief Шифрование одного блока алгоримом Магма 34.12-2015 n = 64
+*
+*	@param[in]  in		64-х битный блок на вход
+*	@param[in]	key		256-ти битный ключ для операции
+*	@param[out]	out		64-x битный блок на выход
+*	@return Статус операции
+*/
+tnStatus tnEncryptBlockMagma(uint8_t* in, uint8_t* key, uint8_t* out);
+
+/** @brief Расшифрование одного блока алгоримом Магма 34.12-2015 n = 64
+*
+*	@param[in]  in		64-х битный блок на вход
+*	@param[in]	key		256-ти битный ключ для операции
+*	@param[out]	out		64-x битный блок на выход
+*	@return Статус операции
+*/
+tnStatus tnDecryptBlockMagma(uint8_t* in, uint8_t* key, uint8_t* out);
+
+#endif //!TNMAGMA_H

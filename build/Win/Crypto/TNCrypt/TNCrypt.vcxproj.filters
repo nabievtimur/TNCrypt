@@ -19,29 +19,56 @@
     <Filter Include="Исходные файлы\cipher">
       <UniqueIdentifier>{c1d5c7af-dd92-48c2-9cb7-a7955e0ff1ae}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Файлы заголовков\cipher\Magma">
-      <UniqueIdentifier>{68479b84-2147-433b-af51-c4125ebcb57b}</UniqueIdentifier>
+    <Filter Include="Исходные файлы\hash">
+      <UniqueIdentifier>{dd30389b-5b37-4c18-988b-2d047f588a09}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\sign">
+      <UniqueIdentifier>{ae1e8b3d-907e-4438-bc5d-20ba3edd5edf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\hash">
+      <UniqueIdentifier>{8fdfdc74-547b-4718-a1e5-265ab2da5f8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\sign">
+      <UniqueIdentifier>{63288ef5-e1a7-408f-bbe3-01a6f536b888}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\API">
+      <UniqueIdentifier>{58c4eaa4-6273-466c-97ec-ec00b2292bb6}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\include\TNCrypt.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\..\include\TNStatus.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\include\cipher\TNCipher.h">
+    <ClInclude Include="..\..\..\..\src\h\cipher\mode\TNMode.h">
       <Filter>Файлы заголовков\cipher</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\include\cipher\TNMagma.h">
-      <Filter>Файлы заголовков\cipher\Magma</Filter>
+    <ClInclude Include="..\..\..\..\src\h\cipher\TNCipher_p.h">
+      <Filter>Файлы заголовков\cipher</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\src\h\cipher\TNpMagma.h">
-      <Filter>Файлы заголовков\cipher\Magma</Filter>
+    <ClInclude Include="..\..\..\..\src\h\cipher\TNMagma.h">
+      <Filter>Файлы заголовков\cipher</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\h\Source.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\TNCrypt.h">
+      <Filter>Файлы заголовков\API</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\TNCipher.h">
+      <Filter>Файлы заголовков\API</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\TNHash.h">
+      <Filter>Файлы заголовков\API</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\TNSign.h">
+      <Filter>Файлы заголовков\API</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\src\cpp\TNMagma.c">
+      <Filter>Исходные файлы\cipher</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\cpp\cipher\TNCipher.c">
       <Filter>Исходные файлы\cipher</Filter>
     </ClCompile>
   </ItemGroup>

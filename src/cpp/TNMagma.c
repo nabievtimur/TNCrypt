@@ -1,4 +1,4 @@
-#include "..\h\cipher\TNpMagma.h"
+#include "..\h\cipher\TNMagma.h"
 
 uint32_t getRoundKey(uint8_t* key, int round, int reverse)
 {
@@ -13,7 +13,7 @@ uint32_t getRoundKey(uint8_t* key, int round, int reverse)
 	return 0;
 }
 
-void round(uint64_t* block, uint32_t key, int last)
+void round(uint64_t* block, uint32_t key, bool last)
 {
 	uint32_t L = *block >> 32;
 	uint32_t R = *block;
@@ -29,8 +29,6 @@ void round(uint64_t* block, uint32_t key, int last)
 	{
 		*block ^= (uint64_t)R << 32;
 	}
-
-	//return uint64_t();
 }
 
 uint32_t swap(uint32_t a)
@@ -56,15 +54,6 @@ uint32_t swap(uint8_t* a)
 uint32_t T(uint32_t a)
 {
 	uint32_t ret = 0;
-
-	//for (int i = 0; i < 8; i += 2)
-	//{
-	//	uint8_t s = (a & (0x000000F0 << (3 - i / 2) * 8)) >> ((3 - i / 2) * 8);
-	//	ret |= s_box[7 - i][s >> 4] << 4;
-	//	s = (a & (0x0000000F << (3 - i / 2) * 8)) >> ((3 - i / 2) * 8);
-	//	ret |= s_box[6 - i][s];
-	//	ret <<= i != 6 ? 8 : 0;
-	//}
 
 	ret |= s_box[7][(a >> 28) & 0x0000000F];
 	ret <<= 4;
@@ -98,12 +87,12 @@ tnStatus crypt(uint8_t* in, uint8_t* key, uint8_t* out, int reverse)
 	}
 }
 
-tnStatus tnEncryptBlock(uint8_t* in, uint8_t* key, uint8_t* out)
+tnStatus tnEncryptBlockMagma(uint8_t* in, uint8_t* key, uint8_t* out)
 {
 	return crypt(in, key, out, 0x00);
 }
 
-tnStatus tnDecryptBlock(uint8_t* in, uint8_t* key, uint8_t* out)
+tnStatus tnDecryptBlockMagma(uint8_t* in, uint8_t* key, uint8_t* out)
 {
 	return crypt(in, key, out, 0x01);
 }

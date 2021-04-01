@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30621.155
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TNCrypt", "TNCrypt\TNCrypt.vcxproj", "{0BD01ED4-E92E-492E-B7D6-4811D67C90E9}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TNCryptTesting", "TNCryptTesting\TNCryptTesting.vcxproj", "{FFAE5F0A-E5BD-4401-A28F-004CE0A3E512}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{0BD01ED4-E92E-492E-B7D6-4811D67C90E9}.Release|x64.Build.0 = Release|x64
 		{0BD01ED4-E92E-492E-B7D6-4811D67C90E9}.Release|x86.ActiveCfg = Release|Win32
 		{0BD01ED4-E92E-492E-B7D6-4811D67C90E9}.Release|x86.Build.0 = Release|Win32
+		{FFAE5F0A-E5BD-4401-A28F-004CE0A3E512}.Debug|x64.ActiveCfg = Debug|x64
+		{FFAE5F0A-E5BD-4401-A28F-004CE0A3E512}.Debug|x64.Build.0 = Debug|x64
+		{FFAE5F0A-E5BD-4401-A28F-004CE0A3E512}.Debug|x86.ActiveCfg = Debug|Win32
+		{FFAE5F0A-E5BD-4401-A28F-004CE0A3E512}.Debug|x86.Build.0 = Debug|Win32
+		{FFAE5F0A-E5BD-4401-A28F-004CE0A3E512}.Release|x64.ActiveCfg = Release|x64
+		{FFAE5F0A-E5BD-4401-A28F-004CE0A3E512}.Release|x64.Build.0 = Release|x64
+		{FFAE5F0A-E5BD-4401-A28F-004CE0A3E512}.Release|x86.ActiveCfg = Release|Win32
+		{FFAE5F0A-E5BD-4401-A28F-004CE0A3E512}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
