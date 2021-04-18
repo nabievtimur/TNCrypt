@@ -1,8 +1,8 @@
 #ifndef TNPCIPHER_H
 #define TNPCIPHER_H
 
-#include "../Source.h"
-#include "../../../include/TNStatus.h"
+#include "Source.h"
+#include "TNMode.h"
 
 struct tnEncryptionCtx_t {
 	uint8_t* initializationVector;

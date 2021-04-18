@@ -3,8 +3,10 @@
 
 #include <stdint.h>
 
+#include "TNStatus.h"
+
 #ifndef bool
-typedef int bool
+typedef int bool;
 #endif
 #ifndef false
 #define false 0x00
@@ -12,6 +14,5 @@ typedef int bool
 #ifndef true
 #define true !false
 #endif
-
 
 #endif //!SOURCE_H

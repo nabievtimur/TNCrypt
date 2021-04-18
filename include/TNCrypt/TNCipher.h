@@ -1,8 +1,6 @@
 #ifndef TNCIPHER_H
 #define TNCIPHER_H
 
-#include "../src/h/cipher/TNCipher_p.h"
-
 /** @brief Алгоритмы шифрования */
 typedef enum tnCipherAlgorithms_t {
 	tnIdCipherAlgorithmMagma,
@@ -18,6 +16,8 @@ typedef enum tnCipherMode_t {
 	tnIdCipherModeCFB,
 	tnIdCipherModeMAC
 } tnCipherMode;
+
+#include "Source.h"
 
 /** @brief Шифрование входного битового вектора "vIn" размера "sInSize", 
 *		результат запишется в выходной буффер "vOut" при достаточном размере указанном в "psOutSize".
@@ -39,16 +39,16 @@ typedef enum tnCipherMode_t {
 *	@return Статус операции
 */
 tnStatus tnEncrypt(
-	__in	tnCipherAlgorithms eAlgorithm,
-	__in	tnCipherMode eMode,
-	__in	const void* cvIn,
-	__in	size_t sInSize,
-	__in	const void* cvKey,
-	__in	size_t sKeySize,
-	__in	const void* cvIv,
-	__in	size_t psIvSize,
-	__out	void* vOut,
-	__inout	size_t* psOutSize);
+	__in	tnCipherAlgorithms	eAlgorithm,
+	__in	tnCipherMode		eMode,
+	__in	const void*			cvIn,
+	__in	size_t				sInSize,
+	__in	const void*			cvKey,
+	__in	size_t				sKeySize,
+	__in	const void*			cvIv,
+	__in	size_t				psIvSize,
+	__out	void*				vOut,
+	__inout	size_t*				psOutSize);
 
 /** @brief Расфрование входного битового вектора "vIn" размера "sInSize",
 *		результат запишется в выходной буффер "vOut" при достаточном размере указанном в "psOutSize".
@@ -69,16 +69,18 @@ tnStatus tnEncrypt(
 *	@return Статус операции
 */
 tnStatus tnDecrypt(
-	__in	tnCipherAlgorithms eAlgorithm,
-	__in	tnCipherMode eMode,
-	__in	const void* cvIn,
-	__in	size_t sInSize,
-	__in	const void* cvKey,
-	__in	size_t sKeySize,
-	__in	const void* cvIv,
-	__in	size_t psIvSize,
-	__out	void* vOut,
-	__inout	size_t* psOutSize);
+	__in	tnCipherAlgorithms	eAlgorithm,
+	__in	tnCipherMode		eMode,
+	__in	const void*			cvIn,
+	__in	size_t				sInSize,
+	__in	const void*			cvKey,
+	__in	size_t				sKeySize,
+	__in	const void*			cvIv,
+	__in	size_t				psIvSize,
+	__out	void*				vOut,
+	__inout	size_t*				psOutSize);
+
+#include "TNCipher_p.h"
 
 /** @brief Структура для хранения контекста шифрования */
 typedef struct tnEncryptionCtx_t tnEncryptionCtx;
@@ -112,6 +114,11 @@ typedef enum tnCipherPropertyName_t {
 *	@param[in]		strValue		Идентификатор значения параметра
 *	@return Статус операции
 */
+
+#define TN_ID_PROPERTY_CIPHER_MODE_ECB "Crypt_mode_ecb"
+#define TN_ID_PROPERTY_CIPHER_ALGORITHM_MAGMA "Crypt_algorithm_magma"
+#define TN_ID_PROPERTY_CIPHER_ALGORITHM_KYZ "Crypt_algorithm_kyznechik"
+
 tnStatus tnEncryptionSetProperty(
 	__inout	tnEncryptionCtx			sCtx, 
 	__in	tnCipherPropertyName	ePropertyKey,
@@ -133,7 +140,8 @@ typedef enum tnCipherPropertyByteVectorName_t {
 tnStatus tnEncryptionSetPropertyByteVector(
 	__inout	tnEncryptionCtx					sCtx,
 	__in	tnCipherPropertyByteVectorName	ePropertyKey,
-	__in	const void*						cvValue);
+	__in	const void*						cvValue,
+	__in	size_t							sValueSize);
 
 /** @brief Поточное шифрование входного блока "cvIn", дополнение последнего блока осуществляться не будет.
 *		Блок будет сохранён и добавлен к следующем вектору полученному из следующего tnEncryptionUpdate().

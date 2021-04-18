@@ -19,26 +19,27 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\include\TNCipher.h" />
-    <ClInclude Include="..\..\..\..\include\TNCrypt.h" />
-    <ClInclude Include="..\..\..\..\include\TNHash.h" />
-    <ClInclude Include="..\..\..\..\include\TNSign.h" />
-    <ClInclude Include="..\..\..\..\include\TNStatus.h" />
-    <ClInclude Include="..\..\..\..\src\h\cipher\mode\TNMode.h" />
-    <ClInclude Include="..\..\..\..\src\h\cipher\TNCipher_p.h" />
-    <ClInclude Include="..\..\..\..\src\h\cipher\TNMagma.h" />
-    <ClInclude Include="..\..\..\..\src\h\Source.h" />
+    <ClInclude Include="..\..\..\include\TNCrypt.h" />
+    <ClInclude Include="..\..\..\include\TNCrypt\TNCipher.h" />
+    <ClInclude Include="..\..\..\include\TNCrypt\TNHash.h" />
+    <ClInclude Include="..\..\..\include\TNCrypt\TNSign.h" />
+    <ClInclude Include="..\..\..\include\TNCrypt\TNStatus.h" />
+    <ClInclude Include="..\..\..\src\h\cipher\TNCipher_p.h" />
+    <ClInclude Include="..\..\..\src\h\cipher\TNMagma.h" />
+    <ClInclude Include="..\..\..\src\h\cipher\TNMode.h" />
+    <ClInclude Include="..\..\..\src\h\Source.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\src\cpp\cipher\TNCipher.c" />
-    <ClCompile Include="..\..\..\..\src\cpp\TNMagma.c" />
+    <ClCompile Include="..\..\..\src\cpp\cipher\TNCipher.c" />
+    <ClCompile Include="..\..\..\src\cpp\cipher\TNMagma.c" />
+    <ClCompile Include="..\..\..\src\cpp\cipher\TNMode.c" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
     <ProjectGuid>{0bd01ed4-e92e-492e-b7d6-4811d67c90e9}</ProjectGuid>
     <RootNamespace>TNCrypt</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -88,18 +89,26 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
     <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)\..\..\..\include\;$(SolutionDir)\..\..\..\src\h\;</IncludePath>
+    <OutDir>..\..\out\$(PlatformTarget)\$(Configuration)\bin\</OutDir>
+    <IntDir>..\..\out\$(PlatformTarget)\$(Configuration)\obj\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)\..\..\..\include\;$(SolutionDir)\..\..\..\src\h\;</IncludePath>
+    <OutDir>..\..\out\$(PlatformTarget)\$(Configuration)\bin\</OutDir>
+    <IntDir>..\..\out\$(PlatformTarget)\$(Configuration)\obj\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
     <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)\..\..\..\include\;$(SolutionDir)\..\..\..\src\h\;</IncludePath>
+    <OutDir>..\..\out\$(PlatformTarget)\$(Configuration)\bin\</OutDir>
+    <IntDir>..\..\out\$(PlatformTarget)\$(Configuration)\obj\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
     <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)\..\..\..\include\;$(SolutionDir)\..\..\..\src\h\;</IncludePath>
+    <OutDir>..\..\out\$(PlatformTarget)\$(Configuration)\bin\</OutDir>
+    <IntDir>..\..\out\$(PlatformTarget)\$(Configuration)\obj\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -109,6 +118,9 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>..\..\..\include\;..\..\..\include\TNCrypt\;..\..\..\src\h\;..\..\..\src\h\cipher\;</AdditionalIncludeDirectories>
+      <ExceptionHandling>false</ExceptionHandling>
+      <LanguageStandard>stdcpp14</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -126,6 +138,9 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>..\..\..\include\;..\..\..\include\TNCrypt\;..\..\..\src\h\;..\..\..\src\h\cipher\;</AdditionalIncludeDirectories>
+      <ExceptionHandling>false</ExceptionHandling>
+      <LanguageStandard>stdcpp14</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -143,6 +158,9 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>..\..\..\include\;..\..\..\include\TNCrypt\;..\..\..\src\h\;..\..\..\src\h\cipher\;</AdditionalIncludeDirectories>
+      <ExceptionHandling>false</ExceptionHandling>
+      <LanguageStandard>stdcpp14</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -160,6 +178,9 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>..\..\..\include\;..\..\..\include\TNCrypt\;..\..\..\src\h\;..\..\..\src\h\cipher\;</AdditionalIncludeDirectories>
+      <ExceptionHandling>false</ExceptionHandling>
+      <LanguageStandard>stdcpp14</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>

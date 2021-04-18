@@ -31,4 +31,4 @@
 *.out
 *.app
 
-build/Win/Crypto/.vs/*
+build/Win/.vs/*

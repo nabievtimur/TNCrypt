@@ -2,13 +2,13 @@
 #define TNSTATUS_H
 
 typedef enum tnStatus_t {
-	TNStatusSuccess\
+	TNStatusSuccess \
 		= 0x00000000,
-	TNStatusError\
+	TNStatusError \
 		= 0x80000000,
-	TNStatusInvalidParameter\
+	TNStatusInvalidParameter \
 		= 0x80000001,
-	TNStatusNotSupported\
+	TNStatusNotSupported \
 		= 0x80000002
 } tnStatus;
 
